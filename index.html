@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travis Bergen — Visual Instruments</title>
+<meta name="description" content="Interactive mathematical visualizations: the Riemann zero landscape as color fields, kissing circles, receiver dynamics, and instrument panels.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0e14; --panel: #121826; --line: #1f2937;
+    --text: #e5e9f0; --dim: #8b95a7; --accent: #7dd3fc;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh; display: flex; flex-direction: column; align-items: center;
+    padding: 0 5%;
+  }
+  header { max-width: 880px; width: 100%; text-align: center; padding: 52px 0 14px; }
+  h1 { font-size: clamp(1.7rem, 4.5vw, 2.8rem); font-weight: 700; letter-spacing: -0.02em; }
+  .tagline { color: var(--dim); margin-top: 10px; font-size: 1.05rem; line-height: 1.65; }
+  main { max-width: 880px; width: 100%; padding: 20px 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  a.card {
+    display: block; background: var(--panel); border: 1px solid var(--line);
+    border-radius: 12px; padding: 22px; text-decoration: none; color: var(--text);
+    transition: border-color .15s, transform .15s;
+  }
+  a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card h2 { font-size: 1.12rem; margin-bottom: 8px; }
+  .card .swatch { height: 6px; border-radius: 3px; margin-bottom: 14px; }
+  .card p { color: var(--dim); font-size: 0.9rem; line-height: 1.6; }
+  .card .go { display: inline-block; margin-top: 12px; color: var(--accent); font-size: 0.85rem; font-weight: 500; }
+  .epistemic {
+    background: var(--panel); border: 1px solid var(--line); border-left: 3px solid #fbbf24;
+    border-radius: 10px; padding: 14px 18px; margin-top: 26px;
+    color: var(--dim); font-size: 0.88rem; line-height: 1.65;
+  }
+  footer {
+    max-width: 880px; width: 100%; text-align: center; color: var(--dim);
+    font-size: 0.82rem; padding: 26px 0 44px; line-height: 1.9;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Visual Instruments</h1>
+  <p class="tagline">Interactive mathematics you can put your hands on — the Riemann zero landscape as
+  color fields and kissing circles, receiver dynamics as living terrain, and the framework behind them,
+  claim by claim.</p>
+</header>
+
+<main>
+  <div class="grid">
+    <a class="card" href="https://travisbergen2.github.io/rh-smith-chart/" target="_blank" rel="noopener noreferrer">
+      <div class="swatch" style="background:linear-gradient(90deg,#34d399,#0ea5e9)"></div>
+      <h2>RH Smith Chart</h2>
+      <p>Five gauges on one disk — an engineer's instrument panel for the Riemann Hypothesis,
+      reading circle-side positivity like impedance on a Smith chart. Companion instrument to IMM Paper 19.</p>
+      <span class="go">Open instrument →</span>
+    </a>
+
+    <a class="card" href="https://travisbergen2.github.io/RH_color_gradient_wheel/" target="_blank" rel="noopener noreferrer">
+      <div class="swatch" style="background:linear-gradient(90deg,#f43f5e,#a855f7,#3b82f6)"></div>
+      <h2>RH Color Field</h2>
+      <p>Every integer is an emitter blending its color wave into one field. Where the blend cancels
+      perfectly — that's a zeta zero. Watch the zeros form as you add emitters, one by one.</p>
+      <span class="go">Open instrument →</span>
+    </a>
+
+    <a class="card" href="https://travisbergen2.github.io/RH_Ford_Circles/" target="_blank" rel="noopener noreferrer">
+      <div class="swatch" style="background:linear-gradient(90deg,#fbbf24,#7dd3fc)"></div>
+      <h2>Ford Circles</h2>
+      <p>Every fraction gets a circle. Circles kiss their Farey neighbors and never cross — and how
+      evenly they spread is, by the Franel–Landau theorem, exactly as strong a question as RH itself.</p>
+      <span class="go">Open instrument →</span>
+    </a>
+
+    <a class="card" href="https://travisbergen2.github.io/Bergen-s_Game_of_Life/" target="_blank" rel="noopener noreferrer">
+      <div class="swatch" style="background:linear-gradient(90deg,#34d399,#fbbf24,#f87171)"></div>
+      <h2>Bergen's Game of Life</h2>
+      <p>A Game of Life where every cell is a tiny listener. Cells that keep pace with their world
+      thrive; cells that listen too fast, too slow, or too loud fail in three visible ways —
+      receiver dynamics as living, breathing terrain.</p>
+      <span class="go">Open instrument →</span>
+    </a>
+
+    <a class="card" href="https://travisbergen2.github.io/IMM_encyclopedia/" target="_blank" rel="noopener noreferrer">
+      <div class="swatch" style="background:linear-gradient(90deg,#e7dcc3,#b45309,#7f1d1d)"></div>
+      <h2>IMM Encyclopedia</h2>
+      <p>The Information Manifold Model, claim by claim — every statement carries its status chip
+      (stable, open, falsified, withdrawn), and the dependency map glows by how much weight each
+      claim carries.</p>
+      <span class="go">Open encyclopedia →</span>
+    </a>
+  </div>
+
+  <div class="epistemic">
+    <strong>What these are, honestly:</strong> visualizations and pedagogy. The classical theorems they
+    illustrate (Ford's tangency theorem, the Franel–Landau equivalence, series cancellation) are proved
+    mathematics; the IMM framework itself is a research program whose claims carry explicit, graded
+    status labels. Nothing on these pages is evidence for or against the Riemann Hypothesis, and none
+    of it claims to be.
+  </div>
+</main>
+
+<footer>
+  Papers: <a href="https://doi.org/10.5281/zenodo.19697792" target="_blank" rel="noopener noreferrer">Information Manifold Model series on Zenodo</a>
+  · Receiver tuning in practice: <a href="https://rpcs1.dev" target="_blank" rel="noopener noreferrer">rpcs1.dev</a><br>
+  Source for this page and every instrument: <a href="https://github.com/travisbergen2" target="_blank" rel="noopener noreferrer">github.com/travisbergen2</a>
+</footer>
+</body>
+</html>
