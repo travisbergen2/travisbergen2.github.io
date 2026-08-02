@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To the Letter — apps built exactly as you said</title>
+<meta name="description" content="Describe your app in plain words. Get a real, signed Android app — Kotlin source and installable APK, both yours. Waitlist open.">
+<meta property="og:title" content="To the Letter — apps built exactly as you said">
+<meta property="og:description" content="Plain words in. A real, signed Android app out. Join the waitlist.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,450;0,9..144,600;1,9..144,450&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f7f3ea; --paper-2: #efe9db; --ink: #1a1611; --ink-soft: #4a4438;
+    --faint: #8d8676; --rule: #d9d1bf; --wax: #8e2f22; --wax-dark: #6e2318;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif; line-height: 1.65;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 6%; }
+
+  header { text-align: center; padding: 76px 0 8px; }
+  .seal {
+    width: 74px; height: 74px; margin: 0 auto 26px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #a83c2c, var(--wax) 55%, var(--wax-dark));
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 3px 10px rgba(110,35,24,0.35);
+    font-family: 'Fraunces', serif; color: #f3e4d8; font-size: 1.9rem; font-weight: 600;
+  }
+  h1 {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: clamp(2.2rem, 7vw, 3.6rem); letter-spacing: 0.005em;
+  }
+  .lede {
+    max-width: 560px; margin: 20px auto 0; color: var(--ink-soft);
+    font-size: clamp(1.02rem, 2.6vw, 1.18rem);
+  }
+  .status {
+    display: inline-block; margin-top: 30px; font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--wax); border: 1px solid #d8b7ae; background: #f4e7e0;
+    border-radius: 3px; padding: 6px 14px;
+  }
+  .cta-row { text-align: center; padding: 30px 0 10px; }
+  .cta {
+    display: inline-block; background: var(--ink); color: var(--paper);
+    font-family: 'Fraunces', serif; font-size: 1.08rem; font-weight: 600;
+    padding: 15px 34px; border-radius: 6px; text-decoration: none;
+    box-shadow: 0 2px 0 var(--wax);
+  }
+  .cta:hover { background: #2b2519; }
+  .cta-sub { margin-top: 12px; color: var(--faint); font-size: 0.85rem; }
+
+  .rule { border: none; border-top: 1px solid var(--rule); margin: 52px auto; max-width: 240px; }
+
+  section h2 {
+    font-family: 'Fraunces', serif; font-weight: 600; text-align: center;
+    font-size: clamp(1.4rem, 4vw, 1.9rem); margin-bottom: 10px;
+  }
+  .section-sub { text-align: center; color: var(--ink-soft); max-width: 600px; margin: 0 auto 34px; }
+
+  /* Specimen */
+  .specimen {
+    background: #fffdf8; border: 1px solid var(--rule); border-radius: 10px;
+    padding: 30px; display: flex; gap: 30px; align-items: center; flex-wrap: wrap;
+    justify-content: center; box-shadow: 0 1px 4px rgba(26,22,17,0.06);
+  }
+  .qr-box { width: 170px; flex: 0 0 auto; background: #fff; padding: 12px; border: 1px solid var(--rule); border-radius: 8px; }
+  .qr-box svg { width: 100%; height: auto; display: block; }
+  .spec-text { flex: 1 1 300px; min-width: 260px; }
+  .spec-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
+  .spec-text h3 { font-family: 'Fraunces', serif; font-size: 1.35rem; margin-bottom: 8px; }
+  .spec-text p { color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 10px; }
+  .dl { font-weight: 600; color: var(--wax); text-decoration: none; border-bottom: 1px solid #d8b7ae; }
+  .dl:hover { color: var(--wax-dark); }
+  .fine { color: var(--faint); font-size: 0.8rem; margin-top: 12px; }
+
+  /* Evidence */
+  .ledger { max-width: 620px; margin: 0 auto; }
+  .ledger-row { display: flex; gap: 16px; padding: 16px 4px; border-bottom: 1px dashed var(--rule); }
+  .ledger-num { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.5rem; color: var(--wax); flex: 0 0 92px; text-align: right; }
+  .ledger-row div:last-child { color: var(--ink-soft); font-size: 0.95rem; }
+  .ledger-row b { color: var(--ink); }
+
+  /* Promises */
+  .promises { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+  .promise { background: #fffdf8; border: 1px solid var(--rule); border-radius: 8px; padding: 22px; }
+  .promise h3 { font-family: 'Fraunces', serif; font-size: 1.08rem; margin-bottom: 8px; }
+  .promise p { color: var(--ink-soft); font-size: 0.9rem; }
+
+  .honesty {
+    max-width: 640px; margin: 0 auto; text-align: center;
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 24px 16px; color: var(--ink-soft); font-size: 0.92rem; font-style: italic;
+    font-family: 'Fraunces', serif;
+  }
+
+  footer { text-align: center; padding: 48px 6% 60px; color: var(--faint); font-size: 0.85rem; }
+  footer a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  footer a:hover { color: var(--wax); }
+  .brandline { font-family: 'Fraunces', serif; font-style: italic; color: var(--ink-soft); margin-bottom: 10px; font-size: 1rem; }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="seal" aria-hidden="true">L</div>
+  <h1>To the Letter</h1>
+  <p class="lede">Describe the app you want in plain words. Get a real, signed Android app — the installable file <em>and</em> the source code, both yours.</p>
+  <div class="status">Waitlist open · doors open after testing completes</div>
+</header>
+
+<div class="cta-row wrap">
+  <a class="cta" href="mailto:travisbergen2@gmail.com?subject=Waitlist%20—%20To%20the%20Letter&body=Put%20me%20on%20the%20list.%0A%0AThe%20app%20I%20want%20to%20build%3A%20">Join the waitlist</a>
+  <div class="cta-sub">One email when doors open. Nothing else, ever.</div>
+</div>
+
+<hr class="rule">
+
+<section class="wrap">
+  <h2>Install something it built</h2>
+  <p class="section-sub">Not a mockup, not a screen recording — a working app our pipeline generated from a one-sentence description, compiled, and signed. Put it on your phone right now.</p>
+  <div class="specimen">
+    <div class="qr-box" aria-label="QR code to download the Tap Counter APK"><svg width="196" height="196" class="segno"><path transform="scale(4)" class="qrline" stroke="#1a1611" d="M4 4.5h7m1 0h3m2 0h2m1 0h1m1 0h1m2 0h3m3 0h1m1 0h3m2 0h7m-41 1h1m5 0h1m3 0h1m1 0h1m3 0h1m1 0h5m5 0h1m1 0h2m2 0h1m5 0h1m-41 1h1m1 0h3m1 0h1m3 0h1m1 0h1m2 0h1m1 0h2m1 0h1m1 0h1m1 0h1m3 0h3m3 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h3m3 0h1m2 0h5m1 0h1m3 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h2m1 0h1m7 0h1m3 0h2m1 0h2m2 0h1m3 0h1m1 0h3m1 0h1m-41 1h1m5 0h1m1 0h2m2 0h2m2 0h7m1 0h3m3 0h3m1 0h1m5 0h1m-41 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-33 1h1m1 0h2m1 0h2m1 0h4m1 0h1m1 0h1m2 0h2m1 0h1m2 0h1m-33 1h1m3 0h1m1 0h5m2 0h2m1 0h2m1 0h4m1 0h1m3 0h2m3 0h5m2 0h1m-40 1h1m1 0h2m3 0h3m2 0h2m2 0h2m4 0h1m3 0h3m3 0h2m1 0h2m1 0h2m-41 1h2m1 0h1m2 0h1m3 0h1m1 0h1m1 0h1m2 0h1m3 0h9m2 0h1m1 0h1m5 0h1m-39 1h2m1 0h1m1 0h1m1 0h2m4 0h3m1 0h3m1 0h1m2 0h7m1 0h2m1 0h1m-38 1h4m1 0h8m1 0h2m1 0h2m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m2 0h2m1 0h1m3 0h2m-41 1h3m1 0h1m2 0h1m1 0h2m1 0h1m6 0h1m4 0h2m1 0h1m1 0h1m3 0h7m-40 1h3m2 0h2m1 0h1m2 0h4m2 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h4m1 0h3m1 0h2m2 0h1m-41 1h2m1 0h1m5 0h1m1 0h4m2 0h7m2 0h2m1 0h3m4 0h2m2 0h1m-38 1h2m1 0h2m4 0h2m1 0h1m1 0h1m3 0h2m1 0h2m2 0h4m3 0h1m4 0h1m-40 1h1m1 0h1m1 0h1m1 0h4m1 0h1m2 0h3m4 0h4m1 0h1m4 0h5m3 0h1m-41 1h2m1 0h6m2 0h1m1 0h2m1 0h1m1 0h1m1 0h5m2 0h1m2 0h1m1 0h4m1 0h2m1 0h1m-40 1h1m2 0h2m2 0h2m2 0h1m1 0h1m1 0h1m3 0h2m4 0h5m1 0h4m1 0h1m-37 1h1m1 0h1m2 0h1m2 0h4m1 0h1m14 0h1m1 0h3m3 0h4m-40 1h3m1 0h1m2 0h3m1 0h1m3 0h3m1 0h1m1 0h4m1 0h2m1 0h1m2 0h4m1 0h1m1 0h1m-41 1h1m1 0h2m2 0h3m1 0h2m2 0h3m1 0h1m1 0h2m1 0h1m3 0h1m1 0h2m3 0h2m1 0h1m2 0h1m-39 1h2m1 0h1m1 0h3m2 0h3m1 0h3m2 0h1m2 0h1m2 0h1m1 0h3m2 0h1m2 0h1m2 0h1m-40 1h1m1 0h5m1 0h1m3 0h3m1 0h1m1 0h4m1 0h1m4 0h1m1 0h3m2 0h2m-37 1h2m9 0h2m4 0h1m1 0h2m1 0h1m1 0h4m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m-41 1h1m3 0h1m1 0h1m2 0h2m2 0h3m1 0h1m4 0h2m3 0h2m3 0h5m3 0h1m-38 1h2m2 0h1m2 0h3m3 0h3m1 0h2m7 0h5m3 0h1m-34 1h1m1 0h1m1 0h1m1 0h1m1 0h2m2 0h1m2 0h1m2 0h1m1 0h1m2 0h1m1 0h1m-30 1h1m1 0h1m1 0h2m1 0h2m1 0h1m1 0h2m2 0h1m2 0h2m1 0h1m1 0h1m1 0h3m1 0h1m3 0h1m1 0h4m-37 1h2m1 0h4m1 0h1m4 0h2m2 0h2m1 0h2m2 0h1m2 0h1m1 0h2m6 0h1m-39 1h1m1 0h2m1 0h1m2 0h2m1 0h5m3 0h2m3 0h2m1 0h1m2 0h2m1 0h3m1 0h1m-40 1h2m1 0h2m1 0h1m3 0h1m1 0h2m3 0h1m1 0h6m1 0h1m1 0h1m3 0h6m-30 1h1m1 0h3m2 0h2m1 0h1m1 0h2m3 0h1m1 0h1m1 0h4m3 0h2m2 0h1m-41 1h7m1 0h1m3 0h2m1 0h1m1 0h1m5 0h2m2 0h2m1 0h1m1 0h1m1 0h1m1 0h1m2 0h2m-41 1h1m5 0h1m2 0h2m1 0h1m1 0h5m1 0h1m1 0h2m5 0h1m1 0h2m3 0h2m2 0h1m-41 1h1m1 0h3m1 0h1m1 0h1m3 0h4m2 0h1m3 0h3m4 0h1m1 0h6m1 0h3m-41 1h1m1 0h3m1 0h1m2 0h2m1 0h1m1 0h3m3 0h2m1 0h1m1 0h4m1 0h1m1 0h1m2 0h1m4 0h1m-41 1h1m1 0h3m1 0h1m3 0h1m1 0h2m1 0h4m4 0h1m2 0h3m2 0h3m4 0h1m1 0h1m-41 1h1m5 0h1m3 0h1m2 0h2m1 0h1m2 0h1m1 0h2m3 0h4m2 0h1m1 0h2m1 0h1m1 0h2m-41 1h7m1 0h1m2 0h3m2 0h2m3 0h2m4 0h1m1 0h2m1 0h2m1 0h2m2 0h1"/></svg></div>
+    <div class="spec-text">
+      <div class="spec-label">Specimen No. 001 · signed APK · 5.3 MB</div>
+      <h3>Tap Counter</h3>
+      <p>Written by the machine from a plain-English description: generated Kotlin/Compose source, compiled with Gradle, signed with a verified signature — the same fail-closed pipeline every app goes through.</p>
+      <a class="dl" href="https://pub.hyperagent.com/api/published/pbf01KZ12H1RY_HVA5ME1M6F133Y9C/ttl-tapcounter-signed.apk">Download the APK directly</a>
+      <p class="fine">Your phone will ask you to allow installs from outside the Play Store — that's Android's standard notice for any directly-distributed app. This one is cryptographically signed; the installer verifies it.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="wrap">
+  <h2>The numbers, exactly as measured</h2>
+  <p class="section-sub">We test the pipeline the way scientists test claims: criteria written down first, results reported whatever they say.</p>
+  <div class="ledger">
+    <div class="ledger-row"><div class="ledger-num">8 / 8</div><div><b>app descriptions became compiled, signed Android apps</b> in our most recent registered test — a corpus of everyday apps: calculators, checklists, small games, journals.</div></div>
+    <div class="ledger-row"><div class="ledger-num">6 / 8</div><div><b>built correctly on the first attempt.</b> The other two were caught by the automatic repair loop, fixed, and rebuilt — you see a working app or an honest error, never a silent failure.</div></div>
+    <div class="ledger-row"><div class="ledger-num">0</div><div><b>unsigned apps have ever left the pipeline.</b> Signing is fail-closed: if an app can't be signed and verified, it refuses to ship. No exceptions, by construction.</div></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="wrap">
+  <h2>What makes it different</h2>
+  <p class="section-sub">Other tools give you a web page in an app costume, or a locked binary you can't open, or code that never becomes an app. This gives you the whole thing.</p>
+  <div class="promises">
+    <div class="promise"><h3>Yours, twice over</h3><p>You get the signed, installable app <em>and</em> the native Kotlin source code. No lock-in, no hostage projects, no binary you can't look inside.</p></div>
+    <div class="promise"><h3>Real Android, not a wrapper</h3><p>Native Kotlin with modern Compose UI — the same stack professional Android teams use. Not a website in a shell.</p></div>
+    <div class="promise"><h3>Repair, or the truth</h3><p>If a build fails, the pipeline diagnoses and retries automatically. If it still can't, you get an honest error — never a charge for a failure dressed up as progress.</p></div>
+    <div class="promise"><h3>Free tier planned: your keys</h3><p>Bring your own AI key, watch a real compile, keep the source — free. Paid tier adds hosted builds and the signed, store-ready file.</p></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<div class="honesty wrap">
+  Honesty, to the letter: those numbers come from a registered test on simple, everyday apps. Bigger and more complex apps aren't measured yet — when they are, the results will be published here, whatever they say.
+</div>
+
+<div class="cta-row wrap">
+  <a class="cta" href="mailto:travisbergen2@gmail.com?subject=Waitlist%20—%20To%20the%20Letter&body=Put%20me%20on%20the%20list.%0A%0AThe%20app%20I%20want%20to%20build%3A%20">Join the waitlist</a>
+  <div class="cta-sub">Tell us the app you want built — first in line builds first.</div>
+</div>
+
+<footer>
+  <div class="brandline">Say it your way. Built to the letter.</div>
+  <div>By Travis Bergen — the maker of <a href="https://rpcs1.dev" target="_blank" rel="noopener noreferrer">rpcs1.dev</a> and the <a href="https://travisbergen2.github.io/" target="_blank" rel="noopener noreferrer">Fractal Youniverse instruments</a>.</div>
+</footer>
+
+</body>
+</html>
