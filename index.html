@@ -52,8 +52,9 @@
   /* Gallery */
   .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; padding: 48px 0 10px; }
   .card {
+    position: relative;
     background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
-    overflow: hidden; text-decoration: none; color: var(--text);
+    overflow: hidden; color: var(--text);
     display: flex; flex-direction: column;
     transition: transform 0.18s ease, border-color 0.18s ease;
   }
@@ -71,8 +72,21 @@
   .enter {
     margin-top: 16px; font-family: 'IBM Plex Mono', monospace;
     font-size: 0.78rem; color: var(--accent); letter-spacing: 0.06em;
+    text-decoration: none; display: inline-block;
   }
   .enter::after { content: " →"; }
+  /* whole card clickable via stretched link */
+  .enter::before { content: ""; position: absolute; inset: 0; }
+  .docket {
+    margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line);
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem;
+    letter-spacing: 0.03em; color: var(--faint);
+  }
+  .docket a {
+    position: relative; z-index: 2; color: var(--dim); text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .docket a:hover { color: var(--accent); }
 
   /* Placard */
   .placard {
@@ -101,7 +115,7 @@
 <main class="wrap">
   <div class="gallery">
 
-    <a class="card" href="https://travisbergen2.github.io/rh-smith-chart/">
+    <div class="card">
       <div class="motif" aria-hidden="true">
         <svg viewBox="0 0 300 150">
           <circle cx="150" cy="75" r="60" fill="none" stroke="#33455e" stroke-width="1.5"/>
@@ -116,11 +130,12 @@
         <div class="room">Room I · Instrument Panel</div>
         <h2>The RH Smith Chart</h2>
         <p>The Cayley–Li disk as a unified instrument panel for circle-side positivity — the Riemann Hypothesis as a needle you can watch, not a mystery you must take on faith. An instrument, not a proof.</p>
-        <span class="enter">Enter</span>
+        <a class="enter" href="https://travisbergen2.github.io/rh-smith-chart/">Enter</a>
+        <div class="docket">Companion paper — <a href="https://doi.org/10.5281/zenodo.21400881" target="_blank" rel="noopener noreferrer">IMM Paper 19: A Smith Chart for the Riemann Hypothesis</a></div>
       </div>
-    </a>
+    </div>
 
-    <a class="card" href="https://travisbergen2.github.io/RH_Ford_Circles/">
+    <div class="card">
       <div class="motif" aria-hidden="true">
         <svg viewBox="0 0 300 150">
           <line x1="0" y1="130" x2="300" y2="130" stroke="#2a3850" stroke-width="1"/>
@@ -137,11 +152,12 @@
         <div class="room">Room II · Geometry of Fractions</div>
         <h2>RH Ford Circles</h2>
         <p>Every fraction gets a circle; the circles kiss but never cross — and how evenly they crowd the line keeps score on the same question the zeta zeros ask. Watch the Franel–Landau scoreboard live.</p>
-        <span class="enter">Enter</span>
+        <a class="enter" href="https://travisbergen2.github.io/RH_Ford_Circles/">Enter</a>
+        <div class="docket">Part of the <a href="https://doi.org/10.5281/zenodo.19697792" target="_blank" rel="noopener noreferrer">Information Manifold Model series</a></div>
       </div>
-    </a>
+    </div>
 
-    <a class="card" href="https://travisbergen2.github.io/RH_color_gradient_wheel/">
+    <div class="card">
       <div class="motif" aria-hidden="true">
         <svg viewBox="0 0 300 150">
           <defs>
@@ -159,11 +175,12 @@
         <div class="room">Room III · Spectrum of the Integers</div>
         <h2>RH Color Gradient Wheel</h2>
         <p>The integers as emitters: each number broadcasts on the primes it contains, and the interference pattern paints the Riemann landscape in color. The zero structure as something you can simply look at.</p>
-        <span class="enter">Enter</span>
+        <a class="enter" href="https://travisbergen2.github.io/RH_color_gradient_wheel/">Enter</a>
+        <div class="docket">Part of the <a href="https://doi.org/10.5281/zenodo.19697792" target="_blank" rel="noopener noreferrer">Information Manifold Model series</a></div>
       </div>
-    </a>
+    </div>
 
-    <a class="card" href="https://travisbergen2.github.io/Bergen-s_Game_of_Life/">
+    <div class="card">
       <div class="motif" aria-hidden="true">
         <svg viewBox="0 0 300 150">
           <g fill="#33455e">
@@ -178,11 +195,12 @@
         <div class="room">Room IV · Receiver Dynamics</div>
         <h2>Bergen's Game of Life</h2>
         <p>Cells that learn to match their world. A cellular automaton where each cell carries the five receiver dials — memory, gain, trigger, agility, commit — and survival belongs to whoever tunes them to the environment they're actually in.</p>
-        <span class="enter">Enter</span>
+        <a class="enter" href="https://travisbergen2.github.io/Bergen-s_Game_of_Life/">Enter</a>
+        <div class="docket">Grounded in <a href="https://doi.org/10.5281/zenodo.19697792" target="_blank" rel="noopener noreferrer">IMM Paper 9 (RPCS-1) &amp; Paper 18 (Observer Requirements)</a></div>
       </div>
-    </a>
+    </div>
 
-    <a class="card" href="https://travisbergen2.github.io/IMM_encyclopedia/">
+    <div class="card">
       <div class="motif" aria-hidden="true">
         <svg viewBox="0 0 300 150">
           <g stroke="#33455e" stroke-width="1.5" fill="none">
@@ -199,11 +217,12 @@
         <div class="room">Room V · The Reference</div>
         <h2>The IMM Encyclopedia</h2>
         <p>The Information Manifold Model as an encyclopedia: every concept with a status chip — proved, conditional, conjectured, falsified, withdrawn — and a dependency graph showing what rests on what. The claim ledger, browsable.</p>
-        <span class="enter">Enter</span>
+        <a class="enter" href="https://travisbergen2.github.io/IMM_encyclopedia/">Enter</a>
+        <div class="docket">Covers the full <a href="https://doi.org/10.5281/zenodo.19697792" target="_blank" rel="noopener noreferrer">IMM series, papers 0A–19</a></div>
       </div>
-    </a>
+    </div>
 
-    <a class="card" href="https://imm.hellofig.app/">
+    <div class="card">
       <div class="motif" aria-hidden="true">
         <svg viewBox="0 0 300 150">
           <g stroke="#33455e" stroke-width="1.2" fill="none">
@@ -220,9 +239,10 @@
         <div class="room">Room VI · Guided Tour</div>
         <h2>IMM Explorer</h2>
         <p>An interactive platform for exploring the Information Manifold Model — a structural account of observation, physics, mind, and artificial intelligence, navigable instead of monolithic.</p>
-        <span class="enter">Enter</span>
+        <a class="enter" href="https://imm.hellofig.app/" target="_blank" rel="noopener noreferrer">Enter</a>
+        <div class="docket">A guided tour of the <a href="https://doi.org/10.5281/zenodo.19697792" target="_blank" rel="noopener noreferrer">Information Manifold Model series</a></div>
       </div>
-    </a>
+    </div>
 
   </div>
 
