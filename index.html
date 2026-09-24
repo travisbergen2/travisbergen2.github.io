@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fractal Youniverse — Visual Instruments for the Information Manifold</title>
-<meta name="description" content="A collection of interactive mathematical instruments: the Riemann zero landscape as color fields, kissing circles that keep score, receiver-dynamics automata, an instrument panel for circle-side positivity, the explicit formula as a bounded disc in motion, the angle legend on one dial, the edge where Euler's product stops, and the IMM Encyclopedia.">
+<meta name="description" content="A collection of interactive mathematical instruments: the Riemann zero landscape as color fields, kissing circles that keep score, receiver-dynamics automata, an instrument panel for circle-side positivity, the explicit formula as a bounded disc in motion, the angle legend on one dial, the edge where Euler's product stops, the finite-field dial where interlacing decides whether mixed zeros stay on the circle, and the IMM Encyclopedia.">
 <meta property="og:title" content="Fractal Youniverse — Visual Instruments">
 <meta property="og:description" content="Interactive mathematical instruments built from the Information Manifold Model research programme. Instruments, not proofs.">
 <meta property="og:type" content="website">
@@ -108,7 +108,7 @@
 <header class="wrap">
   <div class="plate">Permanent Collection</div>
   <h1>Fractal <span class="you">You</span>niverse</h1>
-  <p class="lede">Eight interactive instruments built from the Information Manifold Model research programme — number theory you can turn over in your hands.</p>
+  <p class="lede">Nine interactive instruments built from the Information Manifold Model research programme — number theory you can turn over in your hands.</p>
   <p class="creed"><b>Instruments, not proofs.</b> Every claim lives in the papers, at exactly its earned grade.</p>
 </header>
 
@@ -303,6 +303,32 @@
         <p>Euler's product over the primes builds the zeta function wherever there are no zeros — and stops exactly at the edge of the zero-free region. Watch it converge at s = 2, swing without limit on the critical line at a zero, and see the compensated series whose convergence to the right of the line is the Riemann Hypothesis itself. Computed live from a prime sieve to one million.</p>
         <a class="enter" href="https://fractalyouniverse.org/Product_edge/">Enter</a>
         <div class="docket">Sequel to Room VII · Companion paper — <a href="https://doi.org/10.5281/zenodo.20684022" target="_blank" rel="noopener noreferrer">IMM Paper 14: Truncated Weil Form as Toeplitz Sequence</a></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="motif" aria-hidden="true">
+        <svg viewBox="0 0 300 150">
+          <circle cx="150" cy="75" r="56" fill="none" stroke="#33455e" stroke-width="1.5"/>
+          <path d="M 198.5 47 A 56 56 0 0 1 178 126" fill="none" stroke="#6fdc9a" stroke-width="2.2"/>
+          <path d="M 102 47 A 56 56 0 0 0 122 126" fill="none" stroke="#6fdc9a" stroke-width="2.2"/>
+          <path d="M 102 47 A 56 56 0 0 1 198.5 47" fill="none" stroke="#ff7a7a" stroke-width="2.2"/>
+          <path d="M 122 126 A 56 56 0 0 0 178 126" fill="none" stroke="#ff7a7a" stroke-width="2.2"/>
+          <line x1="40" y1="75" x2="262" y2="75" stroke="#2a3850" stroke-width="1" stroke-dasharray="3 4"/>
+          <circle cx="198.5" cy="47" r="4.5" fill="#e8c47a"/><circle cx="102" cy="47" r="4.5" fill="#e8c47a"/>
+          <circle cx="178" cy="126" r="4.5" fill="#7dd3fc"/><circle cx="122" cy="126" r="4.5" fill="#7dd3fc"/>
+          <circle cx="132" cy="75" r="4.5" fill="none" stroke="#ff7a7a" stroke-width="1.5"/>
+          <circle cx="252" cy="75" r="4.5" fill="none" stroke="#ff7a7a" stroke-width="1.5"/>
+          <line x1="150" y1="75" x2="98" y2="83" stroke="#e8c47a" stroke-width="1" stroke-dasharray="4 3" opacity="0.8"/>
+          <circle cx="150" cy="75" r="2.5" fill="#e7ebf2"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="room">Room IX · The Flip, Made Decidable</div>
+        <h2>The Interlacing Dial</h2>
+        <p>Davenport and Heilbronn mixed two L-functions into one that keeps the functional equation and loses the Euler product — and its zeros leave the line, provably. Here is the same mixture in the finite world of F<sub>q</sub>[T], where Weil's theorem holds and one inequality decides whether the mixed zeros stay on the circle: they do exactly when the two constituents' zeros interlace. Turn the dial through all 194 character pairs for q = 3, 5, 7, computed live. Over ℚ the same flip is the Riemann Hypothesis itself.</p>
+        <a class="enter" href="https://fractalyouniverse.org/Interlacing_dial/">Enter</a>
+        <div class="docket">Sequel to Rooms VII and VIII · turns the Angle Atlas's Davenport–Heilbronn fence into an instrument · Python twin in the <a href="https://github.com/travisbergen2/Interlacing_dial" target="_blank" rel="noopener noreferrer">source repository</a></div>
       </div>
     </div>
 
